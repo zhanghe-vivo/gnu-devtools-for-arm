@@ -1478,11 +1478,6 @@ arm*-*-eabi* | arm*-*-symbianelf* | arm*-*-rtems* | arm*-*-fuchsia*)
 	tmake_file="${tmake_file} arm/t-arm arm/t-arm-elf"
 	target_cpu_cname="arm7tdmi"
 	case ${target} in
-	arm*-*-eabi*)
-	  tm_file="$tm_file newlib-stdint.h"
-	  tmake_file="${tmake_file} arm/t-bpabi"
-	  use_gcc_stdint=wrap
-	  ;;
 	arm*-fv-eabi*)
 	  tm_file="$tm_file fv.h newlib-stdint.h"
 	  tmake_file="${tmake_file} arm/t-bpabi"
@@ -1490,6 +1485,11 @@ arm*-*-eabi* | arm*-*-symbianelf* | arm*-*-rtems* | arm*-*-fuchsia*)
 	  case ${enable_threads} in
 		"" | yes | posix) thread_file='posix' ;;
 	  esac
+	  ;;
+	arm*-*-eabi*)
+	  tm_file="$tm_file newlib-stdint.h"
+	  tmake_file="${tmake_file} arm/t-bpabi"
+	  use_gcc_stdint=wrap
 	  ;;
 	arm*-*-fuchsia*)
 	  tm_file="${tm_file} fuchsia.h arm/fuchsia-elf.h glibc-stdint.h"

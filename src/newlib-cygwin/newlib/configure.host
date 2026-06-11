@@ -611,7 +611,7 @@ case "${host}" in
 	newlib_cflags="${newlib_cflags} -D_NO_GLOB -D_NO_EXECVE -D_NO_GETLOGIN -D_NO_GETPWENT -D_NO_GETUT"
 	newlib_cflags="${newlib_cflags} -D_NO_GETPASS -D_NO_SIGSET -D_NO_WORDEXP -D_NO_POPEN -D_NO_POSIX_SPAWN"
 	newlib_cflags="${newlib_cflags} -DHAVE_FCNTL -DHAVE_BLKSIZE -DHAVE_RENAME"
-	newlib_cflags="${newlib_cflags} -DPATH_MAX=4096 -D_POSIX2_RE_DUP_MAX=255"
+	newlib_cflags="${newlib_cflags} -DPATH_MAX=4096 -D_POSIX2_RE_DUP_MAX=255 -D__FV_NO_CANCEL__"
 	;;
   *-*-cygwin*)
 	test -z "$cygwin_srcdir" && cygwin_srcdir="${abs_newlib_basedir}/../winsup/cygwin"

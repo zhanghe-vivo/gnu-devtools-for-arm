@@ -423,6 +423,29 @@ extern "C" {
 
 #endif
 
+/* fv OS provides full POSIX thread and synchronization support */
+#ifdef __fv__
+#define _POSIX_JOB_CONTROL			1
+#define _POSIX_SAVED_IDS			1
+#define _POSIX_VERSION				200809L
+#define _POSIX_THREADS				1
+#define _POSIX_THREAD_PRIORITY_SCHEDULING	1
+#define _POSIX_THREAD_SAFE_FUNCTIONS		1
+#define _POSIX_THREAD_PROCESS_SHARED		1
+#define _POSIX_READER_WRITER_LOCKS		200112L
+#define _POSIX_SPIN_LOCKS			200112L
+#define _POSIX_BARRIERS			200112L
+#define _POSIX_TIMERS				1
+#define _POSIX_SEMAPHORES			1
+#define _POSIX_MONOTONIC_CLOCK			200112L
+#define _POSIX_MAPPED_FILES			1
+#define _POSIX_MEMLOCK				1
+#define _POSIX_SYNCHRONIZED_IO			1
+#define _POSIX_FSYNC				1
+#define _POSIX_SHARED_MEMORY_OBJECTS		1
+#define _UNIX98_THREAD_MUTEX_ATTRIBUTES         1
+#endif
+
 /* XMK loosely adheres to POSIX -- 1003.1 */
 #ifdef __XMK__
 #define _POSIX_THREADS				1

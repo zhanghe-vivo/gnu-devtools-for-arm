@@ -1,0 +1,6 @@
+*.elf
+*.map
+*.o
+build-arm-none-fv-eabi/
+build-arm-none-fv-eabi-debug/
+.venv/
